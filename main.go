@@ -13,5 +13,5 @@ func main() {
 	fmt.Println("Hello! API works...")
 	fmt.Printf("%s v%s\n", core.Application, core.Version)
 	router := mux.NewRouter()
-	log.Fatal(http.ListenAndServe(":8888", router))
+	log.Fatal(http.ListenAndServe(core.ServerPort, router))
 }
