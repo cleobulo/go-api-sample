@@ -2,25 +2,12 @@ package controller
 
 import (
 	"encoding/json"
+	"go-api-sample/api/data"
 	"net/http"
 )
 
-type task struct {
-	ID    string `json:"id"`
-	Title string `json:"task"`
-	Desc  string `json:"description"`
-}
-
-type tasks []task
-
 // GetTest - implements only for test
 func GetTest(response http.ResponseWriter, request *http.Request) {
-	allTasks := tasks{
-		{
-			ID:    "1",
-			Title: "My First Task",
-			Desc:  "Only a task item for test",
-		},
-	}
-	json.NewEncoder(response).Encode(allTasks)
+	todoList := data.GetTodoList()
+	json.NewEncoder(response).Encode(todoList)
 }
