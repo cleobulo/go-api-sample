@@ -9,6 +9,6 @@ import (
 // InitRoutes - Defines all the routes of the server
 func InitRoutes() *mux.Router {
 	router := mux.NewRouter()
-	router.HandleFunc("/test", controller.GetTest).Methods("GET")
+	router.HandleFunc("/todo", controller.GetTodoList).Methods("GET")
 	return router
 }

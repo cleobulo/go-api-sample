@@ -6,8 +6,8 @@ import (
 	"net/http"
 )
 
-// GetTest - implements only for test
-func GetTest(response http.ResponseWriter, request *http.Request) {
+// GetTodoList - returns TODO list in JSON format
+func GetTodoList(response http.ResponseWriter, request *http.Request) {
 	todoList := data.GetTodoList()
 	json.NewEncoder(response).Encode(todoList)
 }
